@@ -6,7 +6,7 @@ VERSION=$(date +%y.%m.%d)
 CONFIGURATION="Release"
 
 function buildFatFramework() {
-	flags="OTHER_CFLAGS='-fembed-bitcode' -target $1 -configuration ${CONFIGURATION} build"
+	flags="OTHER_CFLAGS='-fembed-bitcode' -target $1 -configuration ${CONFIGURATION}"
 
 	xcodebuild clean
 
@@ -18,6 +18,8 @@ function buildFatFramework() {
 	-framework "build/${CONFIGURATION}-iphoneos/$1.framework" \
 	-framework "build/${CONFIGURATION}-iphonesimulator/$1.framework" \
 	-output "${BASEDIR}/$1.xcframework"
+
+	# 正式包不需要 构建 -framework "build/${CONFIGURATION}-iphonesimulator/$1.framework"
 }
 
 function build() {
