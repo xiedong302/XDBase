@@ -1,0 +1,8 @@
+build/
+out/
+.idea/
+xcuserdata/
+.DS_Store
+/DerivedData
+/.vscode
+DependencyFrameworks/
