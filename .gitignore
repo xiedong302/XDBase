@@ -6,5 +6,5 @@ xcuserdata/
 /DerivedData
 /.vscode
 DependencyFrameworks/
-.xcframework
-.zip
+*.xcframework
+*.zip
